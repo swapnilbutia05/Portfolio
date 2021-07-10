@@ -1,0 +1,364 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom Properties, update these for your own design */
+
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+    
+    --clr-light: #fff;
+    --clr-dark: #171717;
+    --clr-accent: #f23030;
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General styles */
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong { font-weight: var(--fw-bold) }
+
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+/*-----------------------------------------introduction-------------------------------------------------------*/
+
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+
+
+/*-----------------------------------------introduction-------------------------------------------------------*/
+
+
+/*---------------------------------------------------------- Intro section-------------------------------------*/
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }    
+    
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+
+/* ---------------------------------------------------------- Intro section-------------------------------------  */
+
+
+/*  My services section  */
+
+.my-services {
+    background-color: var(--clr-dark);
+    background-image: url(../img/services-bg.jpg);
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;
+}
+
+.services {
+    margin-bottom: 4em;
+}
+
+.service {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .service + .service {
+        margin-left: 2em;
+    }
+}
+
+/*-----------------------------------------who i am-------------------------------------------------------*/
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+    
+    .section__title--about {
+        grid-area: title;
+    }
+    
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+    
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/*-----------------------------------------who i am-------------------------------------------------------*/
+
+
+/* ----------------------------------------------------My Work --------------------------------------------*/
+
+.my-work {
+    background-color: black;
+    color: var(--clr-light);
+    text-align: center;    
+}
+
+.section__title--work {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.w3-light-grey {
+    margin-left: 30px;
+    
+}
+/* ------------------------------------------------------My Work ------------------------------------------*/
+
+
+/*-----------------------------------------My knowledge-------------------------------------------------------*/
+
+.knowledge_pool {
+    list-style: none;
+    width: 80%;
+    padding-bottom: 50px;
+    margin-left: 100px;
+        
+}
+
+.knowledge_pool li {
+    display: block;
+    float: left;
+    width: 30%;
+    
+    
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    
+}
+
+
+.meal-photo img{
+    width: 100%;
+    height: auto;
+    
+}
+.w3-container {
+    width: 100%;
+}
+
+
+/*-----------------------------------------knowledge-------------------------------------------------------*/
+
+
+
+/*----------------------------------------navigation -------------------------------------------------------*/
+
+.ftco-footer-social {
+    list-style: none;
+}
+
+
+/*----------------------------------------navigation -------------------------------------------------------*/
+
+
+/*----------------------------------------qualification-------------------------------------------------------*/
+.education {
+    background-color: antiquewhite;
+}
+
+
+
+.row1 {
+    margin-left: 300px;
+}
+.circle {
+    height: 200px;
+    width: auto;
+    margin-left: 300px;
+    margin-top: 30px;
+}
+
+.row {
+    margin-top: 40px;
+    display :flex;
+    
+
+}
+
+.s8 {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.author {
+    margin-left: 100px;
+}
+/*----------------------------------------qualification-------------------------------------------------------*/
+
+
+

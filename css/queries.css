@@ -1,0 +1,72 @@
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+    
+}
+
+@media only screen and (max-width: 767px) {
+    .circle {
+        height: 150px;
+        width: auto;
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+        
+    .s8 {
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+    .row1 {
+        margin-left: 3px;
+        color: brown;
+    }
+    .row {
+        margin-top: 40px;
+        display :flex;       
+    
+    }
+    
+}
+
+@media only screen and (max-width: 480px) {
+    .circle {
+        height: 150px;
+        width: auto;
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+        
+    .s8 {
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+    .row1 {
+        margin-left: 3px;
+        color: brown;
+    }
+    .row {
+        margin-top: 40px;
+        display :block;       
+    
+    }
+    .w3-container {
+        width: 100%;
+        display: block;
+    }
+    .knowledge_pool li {
+        display: block;
+        width: 100%;
+        margin-right: 300px;
+        
+        
+    }
+    .knowledge_pool {
+        padding-bottom: 200px;
+        
+            
+    }
+    
+}
